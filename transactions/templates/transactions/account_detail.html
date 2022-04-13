@@ -1,0 +1,25 @@
+{% extends 'transactions/base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row all_users">
+        <div>
+            <div class="col-md-6"></div>
+            <div class="col-md-6 one_user">
+                <h3 style="text-transform: uppercase;">UserName: {{account.account_name}}</h3>
+                <h5>Account Number: {{account.acc_number}}</h5>
+                <h5>Account Balance: {{account.account_balance}}</h5>
+                <a class="btn btn-info" href="{% url 'deposit_funds' account.pk %}"><button>Deposit</button></a>
+                <a class="btn btn-info" href="{% url 'transfer_funds' account.pk %}"><button>Transfer</button></a>
+                <a class="btn btn-info" href="{% url 'withdraw_funds' account.pk %}"><button>Withdraw</button></a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock%}
